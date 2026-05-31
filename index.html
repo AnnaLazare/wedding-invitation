@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Анна & Иван | Свадьба</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600&family=Playfair+Display:wght@400;500;600&display=swap" rel="stylesheet">
+
+<style>
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
+
+body{
+font-family:'Cormorant Garamond',serif;
+background:#fafaf8;
+color:#222;
+overflow-x:hidden;
+}
+
+.hero{
+position:relative;
+min-height:100vh;
+display:flex;
+justify-content:center;
+align-items:center;
+text-align:center;
+padding:40px 20px;
+background:
+linear-gradient(rgba(255,255,255,.88),rgba(255,255,255,.95)),
+url('https://images.unsplash.com/photo-1519378058457-4c29a0a2efac?q=80&w=1600&auto=format&fit=crop');
+background-size:cover;
+background-position:center;
+}
+
+.hero-content{
+max-width:700px;
+}
+
+.names{
+font-family:'Playfair Display',serif;
+font-size:64px;
+letter-spacing:4px;
+margin-bottom:10px;
+}
+
+.amp{
+font-size:42px;
+margin:10px 0;
+}
+
+.subtitle{
+font-size:42px;
+margin:30px 0 15px;
+}
+
+.text{
+font-size:28px;
+line-height:1.3;
+}
+
+.date{
+margin-top:35px;
+font-size:54px;
+font-weight:600;
+letter-spacing:2px;
+}
+
+.section{
+padding:90px 20px;
+max-width:900px;
+margin:auto;
+text-align:center;
+}
+
+.section h2{
+font-size:48px;
+margin-bottom:30px;
+font-family:'Playfair Display',serif;
+}
+
+.timer{
+display:grid;
+grid-template-columns:repeat(4,1fr);
+gap:15px;
+margin-top:30px;
+}
+
+.box{
+background:white;
+padding:25px;
+border-radius:16px;
+box-shadow:0 5px 25px rgba(0,0,0,.06);
+}
+
+.box span{
+display:block;
+font-size:46px;
+font-weight:600;
+}
+
+.box small{
+font-size:20px;
+}
+
+.location{
+font-size:30px;
+line-height:1.5;
+}
+
+.map-btn{
+display:inline-block;
+margin-top:30px;
+padding:15px 35px;
+background:#344b32;
+color:white;
+text-decoration:none;
+border-radius:30px;
+font-size:22px;
+}
+
+.wish{
+background:white;
+padding:40px;
+border-radius:20px;
+box-shadow:0 5px 20px rgba(0,0,0,.05);
+font-size:28px;
+line-height:1.5;
+}
+
+.form-card{
+background:white;
+padding:40px;
+border-radius:20px;
+box-shadow:0 5px 20px rgba(0,0,0,.05);
+text-align:left;
+}
+
+label{
+display:block;
+margin-top:20px;
+font-size:24px;
+}
+
+input[type=text],
+textarea{
+width:100%;
+padding:14px;
+margin-top:10px;
+border:1px solid #ddd;
+border-radius:12px;
+font-size:18px;
+font-family:inherit;
+}
+
+.checks{
+margin-top:15px;
+}
+
+.checks label{
+font-size:22px;
+margin-top:10px;
+}
+
+button{
+width:100%;
+margin-top:30px;
+padding:18px;
+border:none;
+background:#344b32;
+color:white;
+font-size:24px;
+border-radius:14px;
+cursor:pointer;
+}
+
+footer{
+padding:80px 20px;
+text-align:center;
+font-size:34px;
+letter-spacing:2px;
+}
+
+.success{
+display:none;
+margin-top:20px;
+padding:20px;
+background:#eef6ec;
+border-radius:12px;
+font-size:22px;
+color:#2f5c2f;
+}
+
+@media(max-width:768px){
+
+.names{
+font-size:46px;
+}
+
+.subtitle{
+font-size:32px;
+}
+
+.date{
+font-size:38px;
+}
+
+.timer{
+grid-template-columns:repeat(2,1fr);
+}
+
+.box span{
+font-size:34px;
+}
+
+.section h2{
+font-size:38px;
+}
+
+.location,
+.wish{
+font-size:24px;
+}
+}
+</style>
+</head>
+<body>
+
+<section class="hero">
+<div class="hero-content">
+
+<div class="names">АННА</div>
+<div class="amp">&</div>
+<div class="names">ИВАН</div>
+
+<div class="subtitle">Дорогие гости!</div>
+
+<div class="text">
+Мы рады пригласить вас<br>
+на наше свадебное торжество
+</div>
+
+<div class="date">15 АВГУСТА 2026</div>
+
+</div>
+</section>
+
+<section class="section">
+<h2>До свадьбы осталось</h2>
+
+<div class="timer">
+<div class="box">
+<span id="days">0</span>
+<small>дней</small>
+</div>
+
+<div class="box">
+<span id="hours">0</span>
+<small>часов</small>
+</div>
+
+<div class="box">
+<span id="minutes">0</span>
+<small>минут</small>
+</div>
+
+<div class="box">
+<span id="seconds">0</span>
+<small>секунд</small>
+</div>
+</div>
+</section>
+
+<section class="section">
+<h2>Место проведения</h2>
+
+<div class="location">
+Загородный клуб «Графский парк»<br>
+г. Ростов-на-Дону<br>
+ул. Левобережная, 60
+</div>
+
+<a
+class="map-btn"
+target="_blank"
+href="https://yandex.ru/maps/?text=Ростов-на-Дону Левобережная 60">
+Открыть карту
+</a>
+
+</section>
+
+<section class="section">
+
+<h2>Наше пожелание</h2>
+
+<div class="wish">
+Пожалуйста, не дарите нам живые цветы.<br><br>
+
+Мы не успеем насладиться их красотой,
+поэтому вместо них будем рады бутылке
+вашего любимого напитка с пожеланием,
+на какой повод нам его открыть.
+</div>
+
+</section>
+
+<section class="section">
+
+<h2>Подтверждение присутствия</h2>
+
+<div class="form-card">
+
+<form id="weddingForm">
+
+<label>Ваше имя</label>
+<input type="text" required>
+
+<label>Планируете присутствовать?</label>
+
+<div class="checks">
+<label><input type="radio" name="visit"> Да</label>
+<label><input type="radio" name="visit"> Нет</label>
+</div>
+
+<label>Какой алкоголь вы предпочитаете?</label>
+
+<div class="checks">
+
+<label><input type="checkbox"> Белое вино</label>
+
+<label><input type="checkbox"> Красное вино</label>
+
+<label><input type="checkbox"> Шампанское</label>
+
+<label><input type="checkbox"> Водка</label>
+
+<label><input type="checkbox"> Виски</label>
+
+</div>
+
+<label>Комментарий</label>
+<textarea rows="4"></textarea>
+
+<button type="submit">
+Отправить ответ
+</button>
+
+</form>
+
+<div class="success" id="success">
+Спасибо! ❤️<br>
+Мы получили ваш ответ и будем счастливы разделить этот день вместе с вами.
+</div>
+
+</div>
+
+</section>
+
+<footer>
+БУДЕМ СЧАСТЛИВЫ РАЗДЕЛИТЬ ЭТОТ ДЕНЬ С ВАМИ
+</footer>
+
+<script>
+
+const weddingDate = new Date("August 15, 2026 16:00:00").getTime();
+
+setInterval(() => {
+
+const now = new Date().getTime();
+const distance = weddingDate - now;
+
+const days = Math.floor(distance/(1000*60*60*24));
+const hours = Math.floor((distance%(1000*60*60*24))/(1000*60*60));
+const minutes = Math.floor((distance%(1000*60*60))/(1000*60));
+const seconds = Math.floor((distance%(1000*60))/1000);
+
+document.getElementById("days").innerText = days;
+document.getElementById("hours").innerText = hours;
+document.getElementById("minutes").innerText = minutes;
+document.getElementById("seconds").innerText = seconds;
+
+},1000);
+
+document.getElementById("weddingForm")
+.addEventListener("submit",function(e){
+
+e.preventDefault();
+
+document.getElementById("success").style.display="block";
+
+this.reset();
+
+window.scrollTo({
+top:document.body.scrollHeight,
+behavior:'smooth'
+});
+
+});
+
+</script>
+
+</body>
+</html>
