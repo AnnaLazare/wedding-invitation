@@ -3,175 +3,494 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Анна & Иван</title>
+<title>Иван & Анна </title>
 
-<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Playfair+Display:wght@400;500;600&family=Cormorant+Garamond:wght@300;400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600&family=Great+Vibes&display=swap" rel="stylesheet">
 
 <style>
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
+
+html{
+scroll-behavior:smooth;
+}
 
 body{
-margin:0;
+background:#fafaf8;
+color:#2f2f2f;
 font-family:'Cormorant Garamond',serif;
-background:#fff;
-color:#1f2a1f;
-text-align:center;
+overflow-x:hidden;
+line-height:1.7;
 }
 
-/* 🌿 simple decorative sides (SAFE) */
-body::before,
-body::after{
-content:"";
+section{
+padding:100px 20px;
+position:relative;
+}
+
+.container{
+max-width:1000px;
+margin:auto;
+text-align:center;
+position:relative;
+z-index:2;
+}
+
+/* Декор */
+.eucalyptus-left,
+.eucalyptus-right{
 position:fixed;
 top:0;
-width:180px;
 height:100%;
-background:
-radial-gradient(circle at 30% 20%, #b7c9b1 20px, transparent 22px),
-radial-gradient(circle at 60% 40%, #ffffff 26px, transparent 28px),
-radial-gradient(circle at 40% 70%, #dfece0 18px, transparent 20px);
-opacity:.25;
+width:180px;
 pointer-events:none;
+opacity:.28;
+background-size:cover;
+background-repeat:no-repeat;
+z-index:0;
 }
 
-body::before{left:0;}
-body::after{right:0;transform:scaleX(-1);}
+.eucalyptus-left{
+left:0;
+background-image:url('https://images.unsplash.com/photo-1512427691650-15f2c5f46f52?auto=format&fit=crop&w=700&q=80');
+}
 
-h1{
+.eucalyptus-right{
+right:0;
+transform:scaleX(-1);
+background-image:url('https://images.unsplash.com/photo-1512427691650-15f2c5f46f52?auto=format&fit=crop&w=700&q=80');
+}
+
+.hero{
+min-height:100vh;
+display:flex;
+align-items:center;
+justify-content:center;
+}
+
+.names{
 font-family:'Great Vibes',cursive;
-font-size:70px;
-margin-top:60px;
+font-size:92px;
+margin-bottom:20px;
+font-weight:400;
 }
 
-h2{
-font-size:32px;
+.invite{
+font-size:52px;
+margin-bottom:40px;
+font-weight:300;
+}
+
+.text{
+font-size:34px;
+max-width:800px;
+margin:auto;
+font-weight:300;
+}
+
+.date{
+margin-top:50px;
+font-size:60px;
+letter-spacing:3px;
+font-weight:600;
+}
+
+.location{
+margin-top:30px;
+font-size:34px;
+}
+
+.block-title{
+font-size:54px;
+margin-bottom:50px;
+font-weight:500;
+}
+
+.countdown{
+display:flex;
+justify-content:center;
+gap:25px;
+flex-wrap:wrap;
 margin-top:40px;
 }
 
-.section{
-max-width:800px;
-margin:auto;
-padding:40px 20px;
+.time-box{
+background:white;
+padding:25px;
+width:130px;
+border-radius:20px;
+box-shadow:0 10px 30px rgba(0,0,0,.08);
 }
 
-.card{
-background:#fff;
-border:1px solid #eee;
-padding:25px;
-border-radius:18px;
-box-shadow:0 10px 30px rgba(0,0,0,.05);
-margin-top:15px;
+.time-box span{
+display:block;
+font-size:42px;
+font-weight:600;
+}
+
+.time-box small{
+font-size:20px;
 }
 
 .btn{
 display:inline-block;
-margin-top:20px;
-padding:14px 30px;
-background:#2f4a34;
-color:white;
-border-radius:30px;
+margin:10px;
+padding:16px 30px;
+border-radius:50px;
 text-decoration:none;
+background:#2e4733;
+color:white;
+font-size:22px;
+transition:.3s;
 }
 
-.timer{
-display:grid;
-grid-template-columns:repeat(4,1fr);
-gap:10px;
-margin-top:20px;
+.btn:hover{
+background:#3f6446;
+transform:translateY(-3px);
 }
 
-.timer div{
-background:#fff;
-border:1px solid #eee;
-padding:15px;
-border-radius:14px;
+.photo-place{
+width:100%;
+max-width:1000px;
+height:550px;
+object-fit:cover;
+border-radius:30px;
+box-shadow:0 15px 40px rgba(0,0,0,.12);
 }
 
-.timer span{
+.map{
+margin-top:30px;
+border-radius:25px;
+overflow:hidden;
+box-shadow:0 10px 30px rgba(0,0,0,.1);
+}
+
+.timeline{
+max-width:850px;
+margin:auto;
+text-align:left;
+}
+
+.event{
+background:white;
+padding:30px;
+border-radius:25px;
+margin-bottom:25px;
+box-shadow:0 8px 25px rgba(0,0,0,.07);
+}
+
+.event-time{
+font-size:40px;
+font-weight:600;
+margin-bottom:10px;
+}
+
+.event-title{
+font-size:36px;
+margin-bottom:10px;
+}
+
+.event-text{
 font-size:28px;
-display:block;
+}
+
+.wishes{
+max-width:900px;
+margin:auto;
+font-size:34px;
+}
+
+.rsvp{
+background:white;
+padding:50px;
+border-radius:30px;
+max-width:800px;
+margin:auto;
+box-shadow:0 10px 30px rgba(0,0,0,.08);
+}
+
+input,textarea{
+width:100%;
+padding:18px;
+margin-top:15px;
+border:1px solid #ddd;
+border-radius:15px;
+font-size:20px;
+font-family:inherit;
+}
+
+button{
+margin-top:20px;
+border:none;
+cursor:pointer;
+}
+
+.footer{
+padding:80px 20px;
+text-align:center;
+font-size:26px;
 }
 
 @media(max-width:768px){
-.timer{grid-template-columns:repeat(2,1fr);}
-h1{font-size:50px;}
+
+.names{
+font-size:62px;
 }
 
+.invite{
+font-size:36px;
+}
+
+.text{
+font-size:28px;
+}
+
+.date{
+font-size:42px;
+}
+
+.block-title{
+font-size:42px;
+}
+
+.location{
+font-size:28px;
+}
+
+.event-title{
+font-size:30px;
+}
+
+.event-text{
+font-size:24px;
+}
+
+.photo-place{
+height:320px;
+}
+
+.eucalyptus-left,
+.eucalyptus-right{
+width:90px;
+opacity:.18;
+}
+}
 </style>
 </head>
 
 <body>
 
-<h1>Анна & Иван</h1>
-<p>15 августа 2026 · 16:00</p>
+<div class="eucalyptus-left"></div>
+<div class="eucalyptus-right"></div>
 
-<a class="btn" href="https://calendar.google.com/calendar/r/eventedit?text=Свадьба+Анна+и+Иван&dates=20260815T130000Z/20260815T200000Z" target="_blank">
-Добавить в календарь
-</a>
+<section class="hero">
+<div class="container">
 
-<div class="section">
+<h1 class="names">Иван & Анна</h1>
 
-<h2>До свадьбы осталось</h2>
+<div class="invite">Дорогие гости!</div>
 
-<div class="timer">
-<div><span id="d"></span>дней</div>
-<div><span id="h"></span>часов</div>
-<div><span id="m"></span>минут</div>
-<div><span id="s"></span>секунд</div>
-</div>
+<p class="text">
+Мы рады пригласить Вас на наше свадебное торжество
+</p>
 
-</div>
+<div class="date">15 августа 2026</div>
 
-<div class="section">
-
-<h2>Место проведения</h2>
-
-<div class="card">
+<div class="location">
+Сбор гостей в 16:00<br>
 Загородный клуб «Графский парк»<br>
-ул. Левобережная 60
+ул. Левобережная, 60
 </div>
 
-<a class="btn" target="_blank"
-href="https://yandex.ru/maps/?text=Графский парк Левобережная 60">
-Открыть карту
+<div class="countdown" id="countdown">
+<div class="time-box">
+<span id="days">0</span>
+<small>дней</small>
+</div>
+
+<div class="time-box">
+<span id="hours">0</span>
+<small>часов</small>
+</div>
+
+<div class="time-box">
+<span id="minutes">0</span>
+<small>минут</small>
+</div>
+
+<div class="time-box">
+<span id="seconds">0</span>
+<small>секунд</small>
+</div>
+</div>
+
+<br><br>
+
+<a class="btn" href="wedding.ics" download>
+📅 Добавить в календарь
+</a>
+
+<a class="btn"
+href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=Свадьба+Ивана+и+Анны&dates=20260815T130000Z/20260815T200000Z&location=Графский+парк,+Ростов-на-Дону"
+target="_blank">
+Google Calendar
 </a>
 
 </div>
+</section>
 
-<div class="section">
+<section>
+<div class="container">
 
-<h2>Пожелание</h2>
+<h2 class="block-title">Место проведения</h2>
 
-<div class="card">
-Пожалуйста, не дарите живые цветы мы не успеем насладится их крастой.<br><br>
-Поэтому вместо них будем рады бутылке вина с пожеланием, на какой повод нам её открыть! ❤️
+<img class="photo-place"
+src="https://images.unsplash.com/photo-1519167758481-83f29c9b6f9f?auto=format&fit=crop&w=1600&q=80"
+alt="Место проведения">
+
+<div class="location" style="margin-top:30px;">
+Загородный клуб «Графский парк»<br>
+ул. Левобережная, 60
+</div>
+
+<div class="map">
+
+<iframe
+src="https://maps.google.com/maps?q=Графский%20парк%20Ростов-на-Дону&t=&z=15&ie=UTF8&iwloc=&output=embed"
+width="100%"
+height="450"
+style="border:0;"
+allowfullscreen=""
+loading="lazy">
+</iframe>
+
+</div>
+
+<br>
+
+<a class="btn"
+href="https://yandex.ru/maps/?text=Графский парк Ростов-на-Дону"
+target="_blank">
+Открыть в Яндекс Картах
+</a>
+
+<a class="btn"
+href="https://maps.google.com/?q=Графский парк Ростов-на-Дону"
+target="_blank">
+Открыть в Google Maps
+</a>
+
+</div>
+</section>
+
+<section>
+<div class="container">
+
+<h2 class="block-title">Пожелания</h2>
+
+<div class="wishes">
+Пожалуйста, не дарите нам живые цветы.
+Мы не успеем насладиться их красотой, поэтому вместо них будем рады бутылке вашего любимого вина с пожеланием, на какой повод нам его открыть.
+</div>
+
+</div>
+</section>
+
+<section>
+<div class="container">
+
+<h2 class="block-title">Расписание вечера</h2>
+
+<div class="timeline">
+
+<div class="event">
+<div class="event-time">16:00</div>
+<div class="event-title">Сбор гостей</div>
+<div class="event-text">
+Время пролетит незаметно за легким аперитивом,
+фуршетом и общением с другими гостями.
+</div>
+</div>
+
+<div class="event">
+<div class="event-time">17:00</div>
+<div class="event-title">Праздничный банкет</div>
+<div class="event-text">
+Банкетный зал «Купол»
+</div>
+</div>
+
+<div class="event">
+<div class="event-time">23:00</div>
+<div class="event-title">Окончание вечера</div>
+<div class="event-text">
+Спасибо, что разделите этот особенный день вместе с нами.
+</div>
 </div>
 
 </div>
 
-<div class="section">
+</div>
+</section>
 
-<h2>Расписание</h2>
+<section>
+<div class="container">
 
-<div class="card">
-16:00 — Сбор гостей.<br>
-17:00 — Праздничный банкет. Банкетный зал - Купол.<br>
-23:00 — Завершение вечера.
+<h2 class="block-title">Подтверждение присутствия</h2>
+
+<div class="rsvp">
+
+<p style="font-size:30px;">
+Просим подтвердить свое присутствие
+до 20.07.2026
+</p>
+
+<form>
+
+<input type="text" placeholder="Ваше имя">
+
+<input type="tel" placeholder="Телефон">
+
+<textarea rows="4"
+placeholder="Комментарий или пожелание"></textarea>
+
+<button class="btn">
+Подтвердить присутствие
+</button>
+
+</form>
+
 </div>
 
+</div>
+</section>
+
+<div class="footer">
+С любовью, Иван и Анна ❤️ 
 </div>
 
 <script>
 
-const date = new Date("2026-08-15T16:00:00").getTime();
+const weddingDate = new Date("August 15, 2026 16:00:00").getTime();
 
-setInterval(()=>{
+setInterval(() => {
+
 const now = new Date().getTime();
-const diff = date - now;
+const distance = weddingDate - now;
 
-document.getElementById("d").innerText = Math.floor(diff/86400000);
-document.getElementById("h").innerText = Math.floor(diff%86400000/3600000);
-document.getElementById("m").innerText = Math.floor(diff%3600000/60000);
-document.getElementById("s").innerText = Math.floor(diff%60000/1000);
+const days = Math.floor(distance / (1000*60*60*24));
+const hours = Math.floor((distance % (1000*60*60*24)) / (1000*60*60));
+const minutes = Math.floor((distance % (1000*60*60)) / (1000*60));
+const seconds = Math.floor((distance % (1000*60)) / 1000);
+
+document.getElementById("days").innerText = days;
+document.getElementById("hours").innerText = hours;
+document.getElementById("minutes").innerText = minutes;
+document.getElementById("seconds").innerText = seconds;
+
 },1000);
 
 </script>
