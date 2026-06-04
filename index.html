@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Иван & Анна </title>
 
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600&family=Great+Vibes&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Ballet&family=Cormorant+Garamond:wght@300;400;500;600&display=swap" rel="stylesheet">
 
 <style>
 *{
@@ -14,20 +14,15 @@ padding:0;
 box-sizing:border-box;
 }
 
-html{
-scroll-behavior:smooth;
-}
-
 body{
-background:#fafaf8;
-color:#2f2f2f;
-font-family:'Cormorant Garamond',serif;
+font-family:'Cormorant Garamond', serif;
+background:linear-gradient(180deg,#fff,#fbfcfa,#fff);
+color:#2b2b2b;
 overflow-x:hidden;
-line-height:1.7;
 }
 
 section{
-padding:100px 20px;
+padding:90px 20px;
 position:relative;
 }
 
@@ -35,33 +30,29 @@ position:relative;
 max-width:1000px;
 margin:auto;
 text-align:center;
-position:relative;
-z-index:2;
 }
 
-/* Декор */
-.eucalyptus-left,
-.eucalyptus-right{
+/* Эвкалипт по бокам */
+.side{
 position:fixed;
 top:0;
-height:100%;
 width:180px;
-pointer-events:none;
-opacity:.28;
+height:100%;
 background-size:cover;
-background-repeat:no-repeat;
+background-position:center;
+opacity:.25;
 z-index:0;
 }
 
-.eucalyptus-left{
+.left{
 left:0;
-background-image:url('https://images.unsplash.com/photo-1512427691650-15f2c5f46f52?auto=format&fit=crop&w=700&q=80');
+background-image:url('https://images.unsplash.com/photo-1512427691650-15f2c5f46f52?auto=format&fit=crop&w=800&q=80');
 }
 
-.eucalyptus-right{
+.right{
 right:0;
 transform:scaleX(-1);
-background-image:url('https://images.unsplash.com/photo-1512427691650-15f2c5f46f52?auto=format&fit=crop&w=700&q=80');
+background-image:url('https://images.unsplash.com/photo-1512427691650-15f2c5f46f52?auto=format&fit=crop&w=800&q=80');
 }
 
 .hero{
@@ -69,430 +60,312 @@ min-height:100vh;
 display:flex;
 align-items:center;
 justify-content:center;
+flex-direction:column;
+}
+
+.monogram{
+font-size:60px;
+letter-spacing:10px;
+opacity:.6;
+margin-bottom:10px;
 }
 
 .names{
-font-family:'Great Vibes',cursive;
-font-size:92px;
+font-family:'Ballet', cursive;
+font-size:140px;
+line-height:1;
 margin-bottom:20px;
-font-weight:400;
 }
 
-.invite{
-font-size:52px;
-margin-bottom:40px;
-font-weight:300;
-}
-
-.text{
-font-size:34px;
-max-width:800px;
-margin:auto;
-font-weight:300;
+.quote{
+font-size:28px;
+font-style:italic;
+color:#5f6a5f;
+max-width:700px;
+margin:20px auto 40px;
 }
 
 .date{
-margin-top:50px;
-font-size:60px;
-letter-spacing:3px;
+font-size:90px;
+letter-spacing:6px;
 font-weight:600;
+margin-top:20px;
 }
 
-.location{
-margin-top:30px;
-font-size:34px;
+.subtext{
+font-size:26px;
+margin-top:25px;
+color:#666;
 }
 
-.block-title{
-font-size:54px;
-margin-bottom:50px;
-font-weight:500;
-}
-
+/* таймер */
 .countdown{
 display:flex;
 justify-content:center;
-gap:25px;
-flex-wrap:wrap;
+gap:14px;
 margin-top:40px;
+flex-wrap:nowrap;
 }
 
-.time-box{
-background:white;
-padding:25px;
-width:130px;
-border-radius:20px;
-box-shadow:0 10px 30px rgba(0,0,0,.08);
+.time{
+background:#fff;
+border:1px solid #e7eee7;
+border-radius:18px;
+padding:18px;
+width:110px;
+box-shadow:0 10px 30px rgba(0,0,0,.05);
 }
 
-.time-box span{
-display:block;
-font-size:42px;
+.time span{
+font-size:40px;
 font-weight:600;
+display:block;
 }
 
-.time-box small{
-font-size:20px;
+.time small{
+font-size:16px;
+color:#666;
 }
 
+/* кнопки */
 .btn{
 display:inline-block;
 margin:10px;
-padding:16px 30px;
-border-radius:50px;
+padding:14px 26px;
+border-radius:40px;
+border:1px solid #cfd8cf;
+background:#fff;
+color:#2b2b2b;
 text-decoration:none;
-background:#2e4733;
-color:white;
-font-size:22px;
 transition:.3s;
+font-size:18px;
 }
 
 .btn:hover{
-background:#3f6446;
-transform:translateY(-3px);
+transform:translateY(-2px);
+background:#f6f9f6;
 }
 
-.photo-place{
-width:100%;
-max-width:1000px;
-height:550px;
-object-fit:cover;
-border-radius:30px;
-box-shadow:0 15px 40px rgba(0,0,0,.12);
+/* блоки */
+.title{
+font-size:52px;
+margin-bottom:30px;
 }
 
+.text{
+font-size:30px;
+max-width:800px;
+margin:auto;
+}
+
+/* карта */
 .map{
 margin-top:30px;
 border-radius:25px;
 overflow:hidden;
-box-shadow:0 10px 30px rgba(0,0,0,.1);
-}
-
-.timeline{
-max-width:850px;
-margin:auto;
-text-align:left;
-}
-
-.event{
-background:white;
-padding:30px;
-border-radius:25px;
-margin-bottom:25px;
-box-shadow:0 8px 25px rgba(0,0,0,.07);
-}
-
-.event-time{
-font-size:40px;
-font-weight:600;
-margin-bottom:10px;
-}
-
-.event-title{
-font-size:36px;
-margin-bottom:10px;
-}
-
-.event-text{
-font-size:28px;
-}
-
-.wishes{
-max-width:900px;
-margin:auto;
-font-size:34px;
-}
-
-.rsvp{
-background:white;
-padding:50px;
-border-radius:30px;
-max-width:800px;
-margin:auto;
 box-shadow:0 10px 30px rgba(0,0,0,.08);
 }
 
-input,textarea{
-width:100%;
-padding:18px;
-margin-top:15px;
-border:1px solid #ddd;
-border-radius:15px;
-font-size:20px;
-font-family:inherit;
+/* разделитель */
+.divider{
+margin:60px 0;
+font-size:22px;
+letter-spacing:8px;
+opacity:.4;
 }
 
-button{
-margin-top:20px;
-border:none;
-cursor:pointer;
+/* расписание */
+.event{
+background:#fff;
+border:1px solid #eee;
+padding:25px;
+border-radius:20px;
+margin:15px auto;
+max-width:700px;
 }
 
-.footer{
-padding:80px 20px;
-text-align:center;
-font-size:26px;
+/* анимация лепестков */
+.petal{
+position:fixed;
+top:-10px;
+width:10px;
+height:10px;
+background:#dfeedd;
+border-radius:50%;
+opacity:.6;
+animation:fall linear infinite;
+z-index:0;
 }
 
+@keyframes fall{
+to{transform:translateY(110vh) rotate(360deg);}
+}
+
+/* адаптив */
 @media(max-width:768px){
 
-.names{
-font-size:62px;
+.names{font-size:80px;}
+.date{font-size:48px;}
+
+.time{
+width:78px;
+padding:12px;
 }
 
-.invite{
-font-size:36px;
-}
+.time span{font-size:26px;}
 
-.text{
-font-size:28px;
-}
-
-.date{
-font-size:42px;
-}
-
-.block-title{
-font-size:42px;
-}
-
-.location{
-font-size:28px;
-}
-
-.event-title{
-font-size:30px;
-}
-
-.event-text{
-font-size:24px;
-}
-
-.photo-place{
-height:320px;
-}
-
-.eucalyptus-left,
-.eucalyptus-right{
-width:90px;
-opacity:.18;
-}
+.side{width:80px;}
 }
 </style>
 </head>
 
 <body>
 
-<div class="eucalyptus-left"></div>
-<div class="eucalyptus-right"></div>
+<div class="side left"></div>
+<div class="side right"></div>
+
+<!-- лепестки -->
+<script>
+for(let i=0;i<25;i++){
+let p=document.createElement("div");
+p.className="petal";
+p.style.left=Math.random()*100+"vw";
+p.style.animationDuration=(5+Math.random()*10)+"s";
+p.style.opacity=Math.random();
+document.body.appendChild(p);
+}
+</script>
 
 <section class="hero">
 <div class="container">
 
-<h1 class="names">Иван & Анна</h1>
+<div class="monogram">I & A</div>
 
-<div class="invite">Дорогие гости!</div>
+<div class="names">Иван & Анна</div>
 
-<p class="text">
-Мы рады пригласить Вас на наше свадебное торжество
-</p>
-
-<div class="date">15 августа 2026</div>
-
-<div class="location">
-Сбор гостей в 16:00<br>
-Загородный клуб «Графский парк»<br>
-ул. Левобережная, 60
+<div class="quote">
+«Каждая история любви прекрасна, но наша — самая любимая»
 </div>
 
-<div class="countdown" id="countdown">
-<div class="time-box">
-<span id="days">0</span>
-<small>дней</small>
-</div>
+<div class="date">15 АВГУСТА 2026</div>
 
-<div class="time-box">
-<span id="hours">0</span>
-<small>часов</small>
-</div>
+<div class="subtext">До нашего праздника осталось</div>
 
-<div class="time-box">
-<span id="minutes">0</span>
-<small>минут</small>
-</div>
-
-<div class="time-box">
-<span id="seconds">0</span>
-<small>секунд</small>
-</div>
-</div>
-
-<br><br>
-
-<a class="btn" href="wedding.ics" download>
-📅 Добавить в календарь
-</a>
-
-<a class="btn"
-href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=Свадьба+Ивана+и+Анны&dates=20260815T130000Z/20260815T200000Z&location=Графский+парк,+Ростов-на-Дону"
-target="_blank">
-Google Calendar
-</a>
-
-</div>
-</section>
-
-<section>
-<div class="container">
-
-<h2 class="block-title">Место проведения</h2>
-
-<img class="photo-place"
-src="https://images.unsplash.com/photo-1519167758481-83f29c9b6f9f?auto=format&fit=crop&w=1600&q=80"
-alt="Место проведения">
-
-<div class="location" style="margin-top:30px;">
-Загородный клуб «Графский парк»<br>
-ул. Левобережная, 60
-</div>
-
-<div class="map">
-
-<iframe
-src="https://maps.google.com/maps?q=Графский%20парк%20Ростов-на-Дону&t=&z=15&ie=UTF8&iwloc=&output=embed"
-width="100%"
-height="450"
-style="border:0;"
-allowfullscreen=""
-loading="lazy">
-</iframe>
-
+<div class="countdown">
+<div class="time"><span id="d">0</span><small>дней</small></div>
+<div class="time"><span id="h">0</span><small>часов</small></div>
+<div class="time"><span id="m">0</span><small>минут</small></div>
+<div class="time"><span id="s">0</span><small>секунд</small></div>
 </div>
 
 <br>
 
-<a class="btn"
-href="https://yandex.ru/maps/?text=Графский парк Ростов-на-Дону"
-target="_blank">
-Открыть в Яндекс Картах
-</a>
-
-<a class="btn"
-href="https://maps.google.com/?q=Графский парк Ростов-на-Дону"
-target="_blank">
-Открыть в Google Maps
-</a>
+<a class="btn" id="icsBtn">📅 Добавить в календарь</a>
 
 </div>
 </section>
 
 <section>
 <div class="container">
+<div class="divider">✦ ✦ ✦</div>
 
-<h2 class="block-title">Пожелания</h2>
+<div class="title">Место проведения</div>
 
-<div class="wishes">
-Пожалуйста, не дарите нам живые цветы.
-Мы не успеем насладиться их красотой, поэтому вместо них будем рады бутылке вашего любимого вина с пожеланием, на какой повод нам его открыть.
+<div class="text">
+Загородный клуб «Графский парк»<br>
+ул. Левобережная, 60<br>
+Ростов-на-Дону
 </div>
 
-</div>
-</section>
-
-<section>
-<div class="container">
-
-<h2 class="block-title">Расписание вечера</h2>
-
-<div class="timeline">
-
-<div class="event">
-<div class="event-time">16:00</div>
-<div class="event-title">Сбор гостей</div>
-<div class="event-text">
-Время пролетит незаметно за легким аперитивом,
-фуршетом и общением с другими гостями.
-</div>
+<div class="map">
+<iframe
+src="https://maps.google.com/maps?q=Графский%20парк%20Ростов-на-Дону&output=embed"
+width="100%" height="400" style="border:0;"></iframe>
 </div>
 
-<div class="event">
-<div class="event-time">17:00</div>
-<div class="event-title">Праздничный банкет</div>
-<div class="event-text">
-Банкетный зал «Купол»
-</div>
-</div>
-
-<div class="event">
-<div class="event-time">23:00</div>
-<div class="event-title">Окончание вечера</div>
-<div class="event-text">
-Спасибо, что разделите этот особенный день вместе с нами.
-</div>
-</div>
-
-</div>
-
+<a class="btn" href="https://yandex.ru/maps/?text=Графский парк Ростов-на-Дону" target="_blank">Яндекс Карты</a>
+<a class="btn" href="https://maps.google.com/?q=Графский парк Ростов-на-Дону" target="_blank">Google Maps</a>
 </div>
 </section>
 
 <section>
 <div class="container">
+<div class="divider">✦ ✦ ✦</div>
 
-<h2 class="block-title">Подтверждение присутствия</h2>
+<div class="title">Пожелания</div>
 
-<div class="rsvp">
-
-<p style="font-size:30px;">
-Просим подтвердить свое присутствие
-до 20.07.2026
-</p>
-
-<form>
-
-<input type="text" placeholder="Ваше имя">
-
-<input type="tel" placeholder="Телефон">
-
-<textarea rows="4"
-placeholder="Комментарий или пожелание"></textarea>
-
-<button class="btn">
-Подтвердить присутствие
-</button>
-
-</form>
-
+<div class="text">
+Пожалуйста, не дарите нам живые цветы.<br><br>
+Мы не успеем насладиться их красотой, поэтому вместо них будем рады бутылке вашего любимого вина с пожеланием, на какой повод нам её открыть.
 </div>
-
 </div>
 </section>
 
-<div class="footer">
-С любовью, Иван и Анна ❤️ 
+<section>
+<div class="container">
+<div class="divider">✦ ✦ ✦</div>
+
+<div class="title">Расписание вечера</div>
+
+<div class="event">16:00 — Сбор гостей</div>
+<div class="event">17:00 — Праздничный банкет (зал «Купол - Зимний сад»)</div>
+<div class="event">23:00 — Окончание вечера</div>
 </div>
+</section>
+
+<section>
+<div class="container">
+<div class="divider">✦ ✦ ✦</div>
+
+<div class="text">
+Просим подтвердить своё присутствие<br>
+до 20 июля 2026 года
+</div>
+
+<br><br>
+
+<div class="text" style="font-size:24px;">
+С любовью, Иван и Анна
+</div>
+</div>
+</section>
 
 <script>
+// COUNTDOWN
+const target = new Date("2026-08-15T16:00:00+03:00").getTime();
 
-const weddingDate = new Date("August 15, 2026 16:00:00").getTime();
+setInterval(()=>{
+let now = new Date().getTime();
+let d = target - now;
 
-setInterval(() => {
-
-const now = new Date().getTime();
-const distance = weddingDate - now;
-
-const days = Math.floor(distance / (1000*60*60*24));
-const hours = Math.floor((distance % (1000*60*60*24)) / (1000*60*60));
-const minutes = Math.floor((distance % (1000*60*60)) / (1000*60));
-const seconds = Math.floor((distance % (1000*60)) / 1000);
-
-document.getElementById("days").innerText = days;
-document.getElementById("hours").innerText = hours;
-document.getElementById("minutes").innerText = minutes;
-document.getElementById("seconds").innerText = seconds;
-
+document.getElementById("d").innerText = Math.floor(d/(1000*60*60*24));
+document.getElementById("h").innerText = Math.floor((d%(1000*60*60*24))/(1000*60*60));
+document.getElementById("m").innerText = Math.floor((d%(1000*60*60))/(1000*60));
+document.getElementById("s").innerText = Math.floor((d%(1000*60))/1000);
 },1000);
 
+// ICS calendar
+document.getElementById("icsBtn").addEventListener("click",()=>{
+const ics =
+`BEGIN:VCALENDAR
+VERSION:2.0
+BEGIN:VEVENT
+SUMMARY:Свадьба Иван и Анна
+DTSTART:20260815T130000Z
+DTEND:20260815T200000Z
+LOCATION:Графский парк, Ростов-на-Дону
+DESCRIPTION:Свадебное торжество Иван и Анна
+END:VEVENT
+END:VCALENDAR`;
+
+const blob = new Blob([ics],{type:"text/calendar"});
+const url = URL.createObjectURL(blob);
+
+let a=document.createElement("a");
+a.href=url;
+a.download="wedding.ics";
+a.click();
+});
 </script>
 
 </body>
