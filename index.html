@@ -9,171 +9,91 @@
 
 <style>
 
-/* ===================== GLOBAL ===================== */
-
-*{
-margin:0;
-padding:0;
-box-sizing:border-box;
-}
-
 body{
+margin:0;
 font-family:'Cormorant Garamond',serif;
-background:#ffffff;
+background:#fff;
 color:#1f2a1f;
-overflow-x:hidden;
+text-align:center;
 }
 
-/* ===================== LUXURY FLORAL SIDES ===================== */
-
+/* 🌿 simple decorative sides (SAFE) */
 body::before,
 body::after{
 content:"";
 position:fixed;
 top:0;
-width:360px;
+width:180px;
 height:100%;
+background:
+radial-gradient(circle at 30% 20%, #b7c9b1 20px, transparent 22px),
+radial-gradient(circle at 60% 40%, #ffffff 26px, transparent 28px),
+radial-gradient(circle at 40% 70%, #dfece0 18px, transparent 20px);
+opacity:.25;
 pointer-events:none;
-z-index:0;
-opacity:.28;
-animation: breathe 8s ease-in-out infinite;
 }
 
-body::before{
-left:0;
-background:
-radial-gradient(circle at 20% 10%, #b7c9b1 18px, transparent 20px), /* eucalyptus */
-radial-gradient(circle at 35% 18%, #ffffff 28px, transparent 30px), /* hydrangea */
-radial-gradient(circle at 50% 30%, #e7efe6 20px, transparent 22px),
-radial-gradient(circle at 40% 50%, #b7c9b1 16px, transparent 18px),
-radial-gradient(circle at 60% 70%, #ffffff 32px, transparent 34px),
-radial-gradient(circle at 45% 85%, #e7efe6 24px, transparent 26px);
-}
-
-body::after{
-right:0;
-transform:scaleX(-1);
-background:
-radial-gradient(circle at 20% 10%, #b7c9b1 18px, transparent 20px),
-radial-gradient(circle at 35% 18%, #ffffff 28px, transparent 30px),
-radial-gradient(circle at 50% 30%, #e7efe6 20px, transparent 22px),
-radial-gradient(circle at 40% 50%, #b7c9b1 16px, transparent 18px),
-radial-gradient(circle at 60% 70%, #ffffff 32px, transparent 34px),
-radial-gradient(circle at 45% 85%, #e7efe6 24px, transparent 26px);
-}
-
-/* soft breathing animation */
-@keyframes breathe{
-0%{transform:translateY(0);}
-50%{transform:translateY(-10px);}
-100%{transform:translateY(0);}
-}
-
-/* ===================== TYPO ===================== */
+body::before{left:0;}
+body::after{right:0;transform:scaleX(-1);}
 
 h1{
 font-family:'Great Vibes',cursive;
-font-size:96px;
-font-weight:400;
-color:#2f4a34;
-text-align:center;
+font-size:70px;
+margin-top:60px;
 }
 
 h2{
-font-family:'Playfair Display',serif;
-font-size:50px;
-margin-bottom:20px;
-color:#2f4a34;
-text-align:center;
+font-size:32px;
+margin-top:40px;
 }
-
-/* ===================== LAYOUT ===================== */
 
 .section{
-padding:100px 20px;
-max-width:900px;
+max-width:800px;
 margin:auto;
-position:relative;
-z-index:2;
-text-align:center;
-opacity:0;
-transform:translateY(40px);
-transition:all 1.2s ease;
+padding:40px 20px;
 }
-
-.section.show{
-opacity:1;
-transform:translateY(0);
-}
-
-/* ===================== CARD ===================== */
 
 .card{
-background:rgba(255,255,255,.92);
-backdrop-filter:blur(14px);
-padding:45px;
-border-radius:28px;
-box-shadow:0 20px 60px rgba(0,0,0,.08);
-font-size:22px;
-line-height:1.8;
+background:#fff;
+border:1px solid #eee;
+padding:25px;
+border-radius:18px;
+box-shadow:0 10px 30px rgba(0,0,0,.05);
+margin-top:15px;
 }
-
-/* ===================== BUTTON ===================== */
 
 .btn{
 display:inline-block;
-margin-top:18px;
-padding:16px 38px;
-background:linear-gradient(135deg,#2f4a34,#3b5a40);
+margin-top:20px;
+padding:14px 30px;
+background:#2f4a34;
 color:white;
-border-radius:50px;
+border-radius:30px;
 text-decoration:none;
-font-size:18px;
-transition:.4s;
-box-shadow:0 10px 30px rgba(47,74,52,.25);
 }
-
-.btn:hover{
-transform:scale(1.06);
-}
-
-/* ===================== TIMER ===================== */
 
 .timer{
 display:grid;
 grid-template-columns:repeat(4,1fr);
-gap:12px;
+gap:10px;
+margin-top:20px;
 }
 
 .timer div{
-background:white;
-padding:20px;
-border-radius:18px;
-box-shadow:0 10px 30px rgba(0,0,0,.06);
+background:#fff;
+border:1px solid #eee;
+padding:15px;
+border-radius:14px;
 }
 
 .timer span{
-font-size:44px;
-color:#2f4a34;
+font-size:28px;
 display:block;
 }
 
-/* ===================== FOOTER ===================== */
-
-footer{
-padding:100px 20px;
-text-align:center;
-font-size:28px;
-color:#2f4a34;
-}
-
-/* ===================== MOBILE ===================== */
-
 @media(max-width:768px){
-h1{font-size:60px;}
-h2{font-size:38px;}
 .timer{grid-template-columns:repeat(2,1fr);}
-body::before,body::after{width:160px;}
+h1{font-size:50px;}
 }
 
 </style>
@@ -181,27 +101,15 @@ body::before,body::after{width:160px;}
 
 <body>
 
-<!-- HERO -->
-<section class="section">
 <h1>Анна & Иван</h1>
 <p>15 августа 2026 · 16:00</p>
 
-<a class="btn" href="data:text/calendar;charset=utf-8,BEGIN:VCALENDAR
-VERSION:2.0
-BEGIN:VEVENT
-DTSTART:20260815T160000
-DTEND:20260815T230000
-SUMMARY:Свадьба Анна и Иван
-LOCATION:Графский парк, ул. Левобережная 60
-DESCRIPTION:Свадебное торжество Анны и Ивана
-END:VEVENT
-END:VCALENDAR" download="wedding.ics">
+<a class="btn" href="https://calendar.google.com/calendar/r/eventedit?text=Свадьба+Анна+и+Иван&dates=20260815T130000Z/20260815T200000Z" target="_blank">
 Добавить в календарь
 </a>
-</section>
 
-<!-- TIMER -->
-<section class="section">
+<div class="section">
+
 <h2>До свадьбы осталось</h2>
 
 <div class="timer">
@@ -210,10 +118,11 @@ END:VCALENDAR" download="wedding.ics">
 <div><span id="m"></span>минут</div>
 <div><span id="s"></span>секунд</div>
 </div>
-</section>
 
-<!-- VENUE -->
-<section class="section">
+</div>
+
+<div class="section">
+
 <h2>Место проведения</h2>
 
 <div class="card">
@@ -225,47 +134,34 @@ END:VCALENDAR" download="wedding.ics">
 href="https://yandex.ru/maps/?text=Графский парк Левобережная 60">
 Открыть карту
 </a>
-</section>
 
-<!-- WISH -->
-<section class="section">
+</div>
+
+<div class="section">
+
 <h2>Пожелание</h2>
 
 <div class="card">
-Пожалуйста, не дарите нам живые цветы.<br><br>
-Мы не успеем насладиться их красотой, поэтому вместо них будем рады бутылке вашего любимого вина с пожеланием, на какой повод нам его открыть.
+Пожалуйста, не дарите живые цветы.<br><br>
+Будем рады бутылке вина с пожеланием ❤️
 </div>
-</section>
 
-<!-- SCHEDULE -->
-<section class="section">
-<h2>Расписание вечера</h2>
+</div>
+
+<div class="section">
+
+<h2>Расписание</h2>
 
 <div class="card">
-16:00 — Сбор гостей (аперитив)<br>
-17:00 — Банкет «Купол»<br>
+16:00 — Сбор гостей<br>
+17:00 — Банкет<br>
 23:00 — Завершение вечера
 </div>
-</section>
 
-<!-- RSVP -->
-<section class="section">
-<h2>Подтверждение</h2>
-
-<div class="card">
-Ваше присутствие для нас очень важно 🤍<br>
-Пожалуйста, подтвердите участие до 20.07.2026
 </div>
-</section>
-
-<footer>
-Анна & Иван<br>
-15 августа 2026
-</footer>
 
 <script>
 
-/* TIMER */
 const date = new Date("2026-08-15T16:00:00").getTime();
 
 setInterval(()=>{
@@ -277,19 +173,6 @@ document.getElementById("h").innerText = Math.floor(diff%86400000/3600000);
 document.getElementById("m").innerText = Math.floor(diff%3600000/60000);
 document.getElementById("s").innerText = Math.floor(diff%60000/1000);
 },1000);
-
-/* scroll animation */
-const sections = document.querySelectorAll(".section");
-
-const observer = new IntersectionObserver(entries=>{
-entries.forEach(e=>{
-if(e.isIntersecting){
-e.target.classList.add("show");
-}
-});
-});
-
-sections.forEach(s=>observer.observe(s));
 
 </script>
 
