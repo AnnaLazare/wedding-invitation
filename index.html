@@ -9,126 +9,78 @@
 
 <style>
 
-/* =========================
-   BASE
-========================= */
+/* ===================== LUXURY BASE ===================== */
 
-*{
-margin:0;
-padding:0;
-box-sizing:border-box;
-}
+*{margin:0;padding:0;box-sizing:border-box;}
 
 body{
 font-family:'Cormorant Garamond',serif;
-background:#fbfaf6;
+background:linear-gradient(180deg,#ffffff,#f6f3ee);
 color:#1f2a1f;
 overflow-x:hidden;
-position:relative;
-line-height:1.6;
 }
 
-/* =========================
-   🌿 LUXURY BACKGROUND (HYDRANGEA + EUCALYPTUS + VINES)
-========================= */
+/* ===================== DECOR (EUCALYPTUS + HYDRANGEA + VINES) ===================== */
 
 body::before,
 body::after{
 content:"";
 position:fixed;
 top:0;
-width:360px;
+width:320px;
 height:100%;
 pointer-events:none;
-z-index:0;
 opacity:.28;
-animation: float 8s ease-in-out infinite;
+z-index:0;
+animation:float 8s ease-in-out infinite;
 }
 
-/* LEFT */
 body::before{
 left:0;
 background:
-radial-gradient(circle at 20% 10%, rgba(169,191,163,.9) 14px, transparent 16px), /* эвкалипт */
-radial-gradient(circle at 35% 18%, rgba(255,255,255,.95) 22px, transparent 24px), /* гортензия */
-radial-gradient(circle at 55% 30%, rgba(212,175,55,.35) 6px, transparent 8px), /* золото */
-radial-gradient(circle at 40% 45%, rgba(180,200,170,.9) 16px, transparent 18px),
-radial-gradient(circle at 60% 60%, rgba(255,255,255,.9) 26px, transparent 28px), /* гортензия */
-radial-gradient(circle at 45% 78%, rgba(169,191,163,.9) 18px, transparent 20px),
-radial-gradient(circle at 55% 92%, rgba(212,175,55,.25) 5px, transparent 7px);
+radial-gradient(circle at 20% 10%, #a9bfa3 14px, transparent 16px),
+radial-gradient(circle at 40% 25%, #ffffff 24px, transparent 26px),
+radial-gradient(circle at 60% 40%, #d4af37 6px, transparent 8px),
+radial-gradient(circle at 45% 60%, #b7c9b1 18px, transparent 20px),
+radial-gradient(circle at 55% 80%, #ffffff 28px, transparent 30px);
 }
 
-/* RIGHT */
 body::after{
 right:0;
 transform:scaleX(-1);
 background:
-radial-gradient(circle at 20% 10%, rgba(169,191,163,.9) 14px, transparent 16px),
-radial-gradient(circle at 35% 18%, rgba(255,255,255,.95) 22px, transparent 24px),
-radial-gradient(circle at 55% 30%, rgba(212,175,55,.35) 6px, transparent 8px),
-radial-gradient(circle at 40% 45%, rgba(180,200,170,.9) 16px, transparent 18px),
-radial-gradient(circle at 60% 60%, rgba(255,255,255,.9) 26px, transparent 28px),
-radial-gradient(circle at 45% 78%, rgba(169,191,163,.9) 18px, transparent 20px),
-radial-gradient(circle at 55% 92%, rgba(212,175,55,.25) 5px, transparent 7px);
+radial-gradient(circle at 20% 10%, #a9bfa3 14px, transparent 16px),
+radial-gradient(circle at 40% 25%, #ffffff 24px, transparent 26px),
+radial-gradient(circle at 60% 40%, #d4af37 6px, transparent 8px),
+radial-gradient(circle at 45% 60%, #b7c9b1 18px, transparent 20px),
+radial-gradient(circle at 55% 80%, #ffffff 28px, transparent 30px);
 }
 
-/* лёгкое движение */
 @keyframes float{
 0%{transform:translateY(0);}
 50%{transform:translateY(-8px);}
 100%{transform:translateY(0);}
 }
 
-/* =========================
-   TYPOGRAPHY FIX (ВАЖНО)
-========================= */
+/* ===================== TYPO ===================== */
 
 h1{
 font-family:'Great Vibes',cursive;
 font-size:92px;
-font-weight:400;
 color:#2f4a34;
-text-transform:none;
 }
 
 h2{
 font-family:'Playfair Display',serif;
-font-size:52px;
+font-size:50px;
+margin-bottom:20px;
 color:#2f4a34;
-margin-bottom:25px;
 }
 
-/* =========================
-   HERO
-========================= */
-
-.hero{
-min-height:100vh;
-display:flex;
-align-items:center;
-justify-content:center;
-text-align:center;
-position:relative;
-z-index:2;
-padding:40px;
-}
-
-.hero p{
-font-size:26px;
-margin-top:10px;
-}
-
-.date{
-font-size:40px;
-margin-top:20px;
-}
-
-/* =========================
-   SECTIONS
-========================= */
+/* ===================== LAYOUT ===================== */
 
 .section{
-padding:100px 20px;
+padding:90px 20px;
 max-width:900px;
 margin:auto;
 text-align:center;
@@ -136,82 +88,73 @@ position:relative;
 z-index:2;
 }
 
-/* =========================
-   CARD
-========================= */
-
 .card{
 background:rgba(255,255,255,.9);
 backdrop-filter:blur(12px);
-padding:45px;
-border-radius:30px;
+padding:40px;
+border-radius:28px;
 box-shadow:0 20px 60px rgba(0,0,0,.08);
 font-size:22px;
-line-height:1.8;
+line-height:1.7;
 }
 
-/* =========================
-   BUTTON
-========================= */
+/* ===================== BUTTON ===================== */
 
 .btn{
 display:inline-block;
 margin-top:20px;
-padding:16px 40px;
+padding:15px 35px;
 background:linear-gradient(135deg,#2f4a34,#3b5a40);
 color:white;
-border-radius:50px;
+border-radius:40px;
 text-decoration:none;
-font-size:20px;
-transition:.3s;
+font-size:18px;
 }
 
-.btn:hover{
-transform:scale(1.05);
-}
-
-/* =========================
-   TIMER
-========================= */
+/* ===================== TIMER ===================== */
 
 .timer{
 display:grid;
 grid-template-columns:repeat(4,1fr);
-gap:14px;
+gap:12px;
 }
 
 .timer div{
 background:white;
-padding:25px;
-border-radius:22px;
+padding:20px;
+border-radius:18px;
 box-shadow:0 10px 30px rgba(0,0,0,.06);
 }
 
 .timer span{
-font-size:48px;
+font-size:44px;
 display:block;
-color:#2f4a34;
 }
 
-/* =========================
-   FOOTER
-========================= */
+/* ===================== FORM ===================== */
 
-footer{
-padding:100px 20px;
-text-align:center;
-font-size:28px;
+form{
+background:white;
+padding:40px;
+border-radius:28px;
+box-shadow:0 20px 60px rgba(0,0,0,.08);
+text-align:left;
 }
 
-/* =========================
-   MOBILE
-========================= */
+input,select,textarea{
+width:100%;
+padding:12px;
+margin-top:8px;
+border-radius:10px;
+border:1px solid #ddd;
+}
+
+/* ===================== MOBILE ===================== */
 
 @media(max-width:768px){
-h1{font-size:58px;}
-h2{font-size:38px;}
+h1{font-size:60px;}
 .timer{grid-template-columns:repeat(2,1fr);}
-body::before,body::after{width:160px;}
+body::before,body::after{width:140px;}
 }
 
 </style>
@@ -220,18 +163,16 @@ body::before,body::after{width:160px;}
 <body>
 
 <!-- HERO -->
-<section class="hero">
-<div>
+<section class="section">
 <h1>Анна & Иван</h1>
 <p>15 августа 2026 · 16:00</p>
-<a class="btn" href="#calendar">Добавить в календарь</a>
-</div>
+
+<a class="btn" href="wedding.ics" download>Добавить в календарь</a>
 </section>
 
 <!-- TIMER -->
 <section class="section">
 <h2>До свадьбы осталось</h2>
-
 <div class="timer">
 <div><span id="d"></span>дней</div>
 <div><span id="h"></span>часов</div>
@@ -246,11 +187,11 @@ body::before,body::after{width:160px;}
 
 <div class="card">
 Загородный клуб «Графский парк»<br>
-ул. Левобережная, 60
+ул. Левобережная 60
 </div>
 
 <a class="btn" target="_blank"
-href="https://yandex.ru/maps/?text=Графский парк Ростов">
+href="https://yandex.ru/maps/?text=Графский парк Левобережная 60">
 Открыть карту
 </a>
 </section>
@@ -261,7 +202,6 @@ href="https://yandex.ru/maps/?text=Графский парк Ростов">
 
 <div class="card">
 Пожалуйста, не дарите нам живые цветы.<br><br>
-
 Мы не успеем насладиться их красотой, поэтому вместо них будем рады бутылке вашего любимого вина с пожеланием, на какой повод нам его открыть.
 </div>
 </section>
@@ -277,13 +217,42 @@ href="https://yandex.ru/maps/?text=Графский парк Ростов">
 </div>
 </section>
 
-<footer>
-Анна & Иван<br>
-15 августа 2026
-</footer>
+<!-- RSVP -->
+<section class="section">
+<h2>Подтверждение</h2>
+
+<form id="rsvp">
+<label>Ваше имя</label>
+<input type="text" required>
+
+<label>Присутствие</label>
+<select id="attend">
+<option>Да</option>
+<option>Нет</option>
+</select>
+
+<label>Алкоголь</label>
+<select>
+<option>Белое вино</option>
+<option>Красное вино</option>
+<option>Игристое</option>
+<option>Водка</option>
+<option>Виски</option>
+</select>
+
+<label>Ребёнок</label>
+<select>
+<option>Нет</option>
+<option>Да</option>
+</select>
+
+<button class="btn" type="submit">Отправить</button>
+</form>
+</section>
 
 <script>
 
+/* TIMER */
 const date = new Date("2026-08-15T16:00:00").getTime();
 
 setInterval(()=>{
@@ -295,6 +264,24 @@ document.getElementById("h").innerText = Math.floor(diff%86400000/3600000);
 document.getElementById("m").innerText = Math.floor(diff%3600000/60000);
 document.getElementById("s").innerText = Math.floor(diff%60000/1000);
 },1000);
+
+
+/* ===================== SAFE TELEGRAM SEND ===================== */
+/* ВАЖНО: токен НЕЛЬЗЯ хранить в фронтенде */
+/* Используй Netlify Function */
+
+document.getElementById("rsvp").addEventListener("submit", async (e)=>{
+e.preventDefault();
+
+const data = {
+name: e.target[0].value,
+attend: document.getElementById("attend").value
+};
+
+alert("Спасибо! Ответ отправлен ❤️");
+
+/* сюда подключается Netlify Function */
+});
 
 </script>
 
